@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delicious Eats - Food Delivery</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">DeliciousEats</div>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <nav class="nav-links" id="nav-links">
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact">Contact</a>
+      <div id="cart-icon">
+        🛒<span id="cart-count"></span>
+      </div>
+    </nav>
+  </header>
+  
+  
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Fresh. Fast. Delicious.</h1>
+      <p>Craving something tasty? Order from us and enjoy fresh food delivered to your door.
+      <p class="tagline" id="foodie-quote">Good food is good mood.</p></p>
+      <a href="#menu" class="btn">See Our Menu</a>
+    </div>
+    <div class="hero-image">
+      <img src="images/hero-food.png" alt="Delicious food" width="600"/>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <h2>Why Choose Us?</h2>
+    <div class="features">
+      <div class="feature">
+        <h3>Fresh Ingredients</h3>
+        <p>We use only the freshest and finest ingredients.</p>
+      </div>
+      <div class="feature">
+        <h3>Fast Delivery</h3>
+        <p>Your food, hot and fresh at your doorstep in 30 mins.</p>
+      </div>
+      <div class="feature">
+        <h3>Best Taste</h3>
+        <p>Satisfy your cravings with our signature dishes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="menu">
+    <h2>Our Popular Dishes</h2>
+    <div class="menu-items">
+      <div class="menu-card">
+        <img src="images/idli.jpg" alt="butter-chicken" />
+        <h3>Idli</h3>
+        <p><strong>₹199</strong></p>
+        <button class="buy-btn" onclick="addToCart(event)">Buy Now</button>
+      </div>
+      <div class="menu-card">
+        <img src="images/dosha.jpg" alt="Tandoori-Chicken" />
+        <h3>Cripsy Dosa</h3>
+        <p><strong>₹200</strong></p>
+        <button class="buy-btn" onclick="addToCart(event)">Buy Now</button>
+      </div>
+      <div class="menu-card">
+        <img src="images/Wade.jpg" alt="Tandoori-Chicken" />
+        <h3>Cripsy Wade</h3>
+        <p><strong>₹190</strong></p>
+        <button class="buy-btn" onclick="addToCart(event)">Buy Now</button>
+      </div>
+      <div class="menu-card">
+        <img src="images/ramen.jpg" alt="Tandoori-Chicken" />
+        <h3>Chill Ramen</h3>
+        <p><strong>₹190</strong></p>
+        <button class="buy-btn" onclick="addToCart(event)">Buy Now</button>
+      </div>
+      <div class="menu-card">
+        <img src="images/chicken-tikka-masala.jpg" alt="Tandoori-Chicken" />
+        <h3>Chicken Tikka</h3>
+        <p><strong>₹190</strong></p>
+        <button class="buy-btn" onclick="addToCart(event)">Buy Now</button>
+      </div>
+      <div class="menu-card">
+        <img src="images/veg-momos.jpg" alt="Pasta" />
+        <h3>Veg Momos</h3>
+        <p>₹249</p>
+        <button class="buy-btn" onclick="addToCart(event)">Buy Now</button>
+      </div>
+      <div class="menu-card">
+        <img src="images/pasta-chilly.jpg" alt="Pasta" />
+        <h3>Italian Pasta</h3>
+        <p>₹249</p>
+        <button class="buy-btn" onclick="addToCart(event)">Buy Now</button>
+      </div>
+      <div class="menu-card">
+        <img src="images/butter chicken.jpg" alt="Pasta" />
+        <h3>Butter Chicken</h3>
+        <p>₹249</p>
+        <button class="buy-btn" onclick="addToCart(event)">Buy Now</button>
+      </div>
+      <div class="menu-card">
+        <img src="images/crunchy-sushi.jpg" alt="Momos" />
+        <h3>Cruncy Sushi</h3>
+        <p>₹149</p>
+        <button class="buy-btn" onclick="addToCart(event)">Buy Now</button>
+      </div>
+      <div class="menu-card">
+        <img src="images/burger-frenchfries.jpg" alt="Momos" />
+        <h3>burger-frenchfries</h3>
+        <p>₹200</p>
+        <button class="buy-btn" onclick="addToCart(event)">Buy Now</button>
+      </div>
+    </div>
+
+
+  
+
+
+
+  </section>
+
+
+   <!-- Cart Modal -->
+  <div id="cart-modal" class="cart-modal hidden">
+    <div class="cart-modal-content">
+      <span class="close-btn" id="close-cart">&times;</span>
+      <h2>Your Cart</h2>
+      <ul id="cart-list"></ul>
+      <p id="cart-total" style="font-weight: bold; margin-top: 10px;">Total: ₹ 0</p>
+      <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    </div>
+  </div>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="reviews">
+      <div class="review">
+        <p>"Absolutely loved the food! Super quick delivery too."</p>
+        <span>- Priya S.</span>
+      </div>
+      <div class="review">
+        <p>"The pasta was creamy and delicious. 10/10!"</p>
+        <span>- Rahul M.</span>
+      </div>
+      <div class="review">
+        <p>"Amazing! Butter Chicken Love it!" 10/10!"</p>
+        <span>- Rahul M.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p><strong>Contact us: </strong><i>contact@deliciouseats.com</i></p>
+    <p><strong>&copy; 2025 Delicious Eats. All rights reserved.</strong></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
